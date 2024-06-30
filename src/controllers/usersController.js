@@ -10,7 +10,7 @@ exports.getAllUsers = (req, res, next) => {
     });
 };
 exports.getUserById = (req, res, next) => {
-  const id = req.params.UserId;
+  const id = req.params.UsersId;
   console.log(id);
 
   Users.findById(id)
@@ -45,14 +45,10 @@ exports.updateUsers = (req, res, next) => {
   const UsersId = req.params.UsersId;
   const updateBody = req.body;
 
-  Users.findOneAndUpdate(
-    { _id: UsersId },
-    updateBody,
-    {
-      new: true,
-      overwrite: true,
-    }
-  )
+  Users.findOneAndUpdate({ _id: UsersId }, updateBody, {
+    new: true,
+    overwrite: true,
+  })
     .then((updtatedUsers) => {
       if (!updtatedUsers) {
         return res.status(404).send({

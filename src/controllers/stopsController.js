@@ -62,9 +62,10 @@ exports.createStop = (req, res, next) => {
 
     StopNew.save()
       .then((response) => {
+        response.imageUrl = GenerateImageUrl(req, response.imageUrl);
         res.status(200).send({
           message: "Stops successfully added",
-          response: response,
+          response:  response ,
         });
       })
       .catch((err) => {
@@ -116,7 +117,7 @@ exports.updateStop = (req, res, next) => {
 exports.deleteStop = (req, res, next) => {
   const StopId = req.params.stopId;
 
-  Utilisateur.findOneAndDelete({ _id: StopId })
+  Stops.findOneAndDelete({ _id: StopId })
     .then((deletedStop) => {
       if (!deletedStop) {
         return res.status(404).send({

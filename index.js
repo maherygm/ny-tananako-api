@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const routes = require("../src/routes");
+const routes = require("./src/routes");
 
 const { createServer } = require("vercel-node-server");
 
@@ -17,7 +17,7 @@ const uri =
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", routes);
-app.use("../uploads", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
 //lancement du serveur
 app.listen(PORT, () => {
