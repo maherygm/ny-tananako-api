@@ -10,7 +10,7 @@ const { createServer } = require("vercel-node-server");
 //declaration variable
 const PORT = 4000;
 const db =
-  "mongodb+srv://mongodb+srv://maheryrak1234:rakotomalala1301@cluster0.6domolz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/ny_tananako";
+  "mongodb+srv://maheryrak1234:rakotomalala1301@cluster0.6domolz.mongodb.net/ny_tananako";
 const app = express();
 
 app.use(cors());
