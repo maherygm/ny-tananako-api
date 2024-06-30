@@ -12,7 +12,8 @@ const PORT = 4000;
 const db =
   "mongodb+srv://maheryrak1234:rakotomalala1301@cluster0.6domolz.mongodb.net/ny_tananako";
 const app = express();
-
+const uri =
+  "mongodb+srv://maheryrak1234:rakotomalala1301@cluster0.6domolz.mongodb.net/?appName=Cluster0";
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", routes);
@@ -24,7 +25,7 @@ app.listen(PORT, () => {
 
   //connection a la bd
   mongoose
-    .connect(db)
+    .connect(uri)
     .then(() => console.log("Successfully connected to the database"))
     .catch((err) => console.error(err));
 });
