@@ -10,6 +10,7 @@ router.use(demoAuthMiddleware);
 router.get("/", UsersController.getAllUsers);
 router.get("/:UsersId", UsersController.getUserById);
 router.post("/", UsersController.createUser);
+router.post("/login", UsersController.getUserByCredentials);
 router.put("/:UsersId", UsersController.updateUsers);
 router.delete("/:UsersId", UsersController.deleteUsers);
 

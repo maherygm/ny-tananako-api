@@ -27,6 +27,29 @@ exports.getUserById = (req, res, next) => {
     });
 };
 
+exports.getUserByCredentials = (req, res, next) => {
+  const { username, password } = req.body;
+
+  Users.findOne({ username, password })
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send({
+          error: true,
+          message: "User not found",
+        });
+      }
+      res.status(200).send({
+        response: user,
+      });
+    })
+    .catch((err) => {
+      res.status(400).send({
+        error: true,
+        message: "Error finding user",
+      });
+    });
+};
+
 exports.createUser = (req, res, next) => {
   const body = req.body;
   const UsersNew = new Users(body);
