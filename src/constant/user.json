@@ -1,0 +1,20 @@
+[
+  {
+    "nom": "Leroy",
+    "prenom": "Sophie",
+    "email": "sophie.leroy@example.com",
+    "mdp": "clientpass101"
+  },
+  {
+    "nom": "Moreau",
+    "prenom": "Antoine",
+    "email": "antoine.moreau@example.com",
+    "mdp": "clientpass202"
+  },
+  {
+    "nom": "Garnier",
+    "prenom": "Chloé",
+    "email": "chloe.garnier@example.com",
+    "mdp": "clientpass303"
+  }
+]

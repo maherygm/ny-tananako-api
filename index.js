@@ -1,4 +1,5 @@
 //importation
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -8,7 +9,7 @@ const routes = require("./src/routes");
 const { createServer } = require("vercel-node-server");
 
 //declaration variable
-const PORT = 4000;
+const PORT = 8000;
 const db =
   "mongodb+srv://maheryrak1234:rakotomalala1301@cluster0.6domolz.mongodb.net/ny_tananako";
 const app = express();
